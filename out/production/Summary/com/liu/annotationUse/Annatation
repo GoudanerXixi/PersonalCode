@@ -1,0 +1,19 @@
+1.注解：对java中的类、方法、成员变量、参数、构造器等进行标注，然后进行特殊处理
+2.自定义注解：public @interface 注解名称(){public 属性类型（java支持的数据类型基本都支持） 属性名() default 默认值};
+3.特殊属性：value属性，如果只有一个value属性的情况下，value的名称可以省略不写，但是如果有多个属性，且没有默认值，那么value不能省略
+4.元注解：注解注解的注解
+4.1  @Target:约束自定义注解只能在哪些地方使用，可使用的值定义在ElementType枚举类中
+     TYPE：类，接口   FIELD：成员变量  METHOD：成员方法 CONSTRUCTOR：构造器 PARAMETER：方法参数 LOCAL_VARIABLE：局部变量
+
+     @Retention:申明自定义注解的生命周期，可使用的值定义在RetentionPolicy枚举类中
+     SOURCE：源码阶段  CLASS：源码阶段，字节码阶段（默认值）
+     RUNTIME：所有阶段
+
+5.注解的解析：判断是否存在注解，存在就解析出注解内容
+5.1与注解相关的接口
+    Annotation：注解的顶级接口，注解都是Annotation的对象
+    AnnotatedElement：该接口定义了与注解解析相关的解析方法：
+    Aonotation[] getDeclaredAnnotations()：获取当前对象上使用的全部注解
+    T getDeclaredAnnotation(Class<T> annotationClass)：根据注解类型获取对应注解对象
+    boolean isAnnotationprensnt(Class<Annotation> AnnotationClass)：判断当前对象是否使用了指定注解
+    注解在哪个成分上我们就先拿哪个成分对象

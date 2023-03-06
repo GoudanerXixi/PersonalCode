@@ -1,0 +1,14 @@
+name=李华
+age=25
+dogName=大黄
+price=10000.0
+color=黄色
+age=2
+==============Student==============
+name=李华
+age=25
+==============Dog==============
+dogName=大黄
+price=10000.0
+color=黄色
+age=2

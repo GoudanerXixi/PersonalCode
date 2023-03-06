@@ -1,0 +1,36 @@
+cad
+cdFs
+西西最爱狗蛋儿
+pABC
+package com.liu.IoStream;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.Reader;
+
+public class charStream {
+    public static void main(String[] args) throws Exception {
+        //1.创建字符输入管道，与源文件对象/路径 相通
+        Reader re = new FileReader("Summary\\src\\data03.txt");
+
+        //读取一个字符
+//        int a = re.read();
+//        System.out.print((char) a);
+//        int a1 = re.read();
+//        System.out.print((char) a1);
+//        int a2 = re.read();
+//        System.out.print((char) a2);
+//        int a3 = re.read();
+//        System.out.print((char) a3); //我第一行只有三个字符，单次读第四个没有换行读不到数据
+//        int len;
+//        while ((len = re.read()) != -1)
+//        {
+//            System.out.print((char) len);
+//        }
+
+        //读取一个字符数组
+        char[] buffer = new char[3];//一次读三个字符
+        String s = new String(buffer);
+        System.out.print(s);
+    }
+}
